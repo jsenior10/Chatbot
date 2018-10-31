@@ -1,0 +1,20 @@
+<Response>
+<Say>client
+Please insert your name.
+Jacob
+Jacob, please insert your address as best as possible.
+155 Far Gosford street
+Jacob, please describe the situation as best as possible.
+my dog died while in a shootout with a car and the car fell over and is now having a seizure
+Was the victim bitten by an animal? yes/no: 
+no
+Did the victim fall or injure themself? yes/no: 
+yes
+Is the victim having a seizure? yes/no: 
+yes
+Is the victim in a vehicle accident? yes/no: 
+no
+Jacob, help is on the way.
+ending con.
+</Say>
+</Response>
