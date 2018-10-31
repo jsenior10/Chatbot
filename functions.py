@@ -118,8 +118,8 @@ def BreathingDifficulty():
 def sendEmail(fullChatString):
     emailServer = smtplib.SMTP_SSL('smtp.gmail.com', 465) #connects to Gmails email server securely
     #emailReceiver = input("Who will receive the email?\n")
-    emailReceiver = "jacobsenior4@gmail.com"
-    emailServer.login("emailsendtestjeff@gmail.com", "Jeffjeffjeff") #logs in with provided email and password
+    emailReceiver = "[RECEIVING EMAIL HERE]"
+    emailServer.login("[SENDING EMAIL ADDRESS HERE]", "[SENDING EMAIL ADDRESS PASSWORD HERE]") #logs in with provided email and password
 
     emergency = fullChatString
     msg = MIMEMultipart('alternative')   #sets up the email so it has correct formatting
@@ -131,7 +131,7 @@ def sendEmail(fullChatString):
     part1 = MIMEText(textBody, 'plain') #makes sure the email is in text format rather than HTML
     msg.attach(part1)
 
-    emailServer.sendmail("emailsendtestjeff@gmail.com", emailReceiver, msg.as_string())
+    emailServer.sendmail("[SENDING EMAIL ADDRESS HERE]", emailReceiver, msg.as_string())
     print("Email sent.")
     return ""
 
@@ -153,7 +153,7 @@ def makeCall(fullChatString): #this function also edits the textToSpeech.xml fil
     authKey = "58f18f90b5161191a30ede8cbead1447" #account authentication for the SMS and phone call API
     client = Client(accountID, authKey)
     
-    ftpConnection = ftplib.FTP("jacobsenior.coventry.domains", "jacobsen", "WtYm76iy47") #establishes the connection to the server via FTP with the details provided
+    ftpConnection = ftplib.FTP("[FTP SERVER]", "[FTP SERVER USERNAME]", "[FTP SERVER PASSWORD]") #establishes the connection to the server via FTP with the details provided
     question = fullChatString
     tree = ET.parse('textToSpeech.xml')
     root = tree.getroot()
@@ -168,8 +168,8 @@ def makeCall(fullChatString): #this function also edits the textToSpeech.xml fil
     fh.close
 
     makeCall = client.api.account.calls.create(
-    to = "+447460489566", #sends to my phone number right now, could be easily changed to send to others but the API requires phone numbers to be verified when using a free account
-    from_ = "+447481345615",
-    url = "http://jacobsenior.coventry.domains/textToSpeech.xml") 
+    to = "+[RECEIVING PHONE NUMBER]", #sends to my phone number right now, could be easily changed to send to others but the API requires phone numbers to be verified when using a free account
+    from_ = "[SENDING PHONE NUMBER]",
+    url = "[TEXT TO SPEECH XML FILE LINK]") 
     print("Phone call made.")
     return ""
